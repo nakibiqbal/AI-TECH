@@ -39,10 +39,14 @@ window.addEventListener("scroll", () => {
   var imgLeft = document.querySelector(".imgLeft");
   var textRight = document.querySelector(".textRight");
   var serviceTech = document.querySelector(".serviceTech");
+  var cardSection = document.querySelector(".cardSection");
+  var contactSection = document.querySelector(".contactSection");
 
   var imgLeftHeight = imgLeft.getBoundingClientRect().top;
   var textRightHeight = textRight.getBoundingClientRect().top;
   var serviceTechHeight = serviceTech.getBoundingClientRect().top;
+  var cardSectionHeight = cardSection.getBoundingClientRect().top;
+  var contactSectionHeight = contactSection.getBoundingClientRect().top;
   var windowHeight = window.innerHeight;
   var top = 150;
 
@@ -74,6 +78,22 @@ window.addEventListener("scroll", () => {
     serviceTech.style.transform = "translateY(15vw)";
     serviceTech.style.transition = "all 1s";
     serviceTech.style.opacity = "0";
+  }
+
+  if (cardSectionHeight < windowHeight - top) {
+    cardSection.style.transition = "all 3s";
+    cardSection.style.opacity = "1";
+  } else {
+    cardSection.style.transition = "all 3s";
+    cardSection.style.opacity = "0";
+  }
+
+  if (contactSectionHeight < windowHeight - top) {
+    contactSection.style.transition = "all 1s";
+    contactSection.style.transform = "scale(1)";
+  } else {
+    contactSection.style.transition = "all 1s";
+    contactSection.style.transform = "scale(0.5)";
   }
 });
 
